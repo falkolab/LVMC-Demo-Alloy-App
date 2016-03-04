@@ -1,2 +1,3 @@
-# LVMC-Demo-Alloy-App
-Demo application for multicolumn ListView helper library 
+## Alloy demo application for LVCM library
+
+[Read more](https://github.com/falkolab/LVMC)

@@ -1,0 +1,41 @@
+<Alloy>
+	<Window title="Multicolumn infinite list demo" onOpen="init" onClose="cleanup">
+		<ListView id="list"
+			module="com.falkolab.lvmc" 
+			columns="3"
+			defaultItemTemplate="template1" separatorHeight="0">
+			<Templates>
+				<ItemTemplate name="template1">
+					<View height="Ti.UI.FILL" width="Ti.UI.FILL">
+						<ImageView class="avatar" bindId="avatar" />					
+						<View class="nameWrapper">
+							<Label class="name" bindId="name" />		
+						</View>					
+						<Label class="index" bindId="index"/>
+					</View>
+				</ItemTemplate>
+				<ItemTemplate name="template2">
+					<View height="Ti.UI.FILL" width="Ti.UI.FILL">
+						<!-- just for test -->
+						<View class="nameWrapper">
+							<Label class="name" bindId="name" />			
+						</View>
+					</View>
+				</ItemTemplate>
+			</Templates>
+			<ListSection 
+				module="com.falkolab.lvmc"
+				columns="3"
+				defaultItemTemplate="template1" />
+			<!-- <ListSection>
+				<ListItem litera:text="A" />
+				<ListItem litera:text="B" />
+				<ListItem litera:text="C" />
+				<ListItem litera:text="D" />
+				<ListItem litera:text="E" />				
+			</ListSection> -->
+			<Widget id="is" src="nl.fokkezb.infiniteScroll" onEnd="onLoadMore" />
+		</ListView>
+		<ActivityIndicator id="activityIndicator" />
+	</Window>
+</Alloy>

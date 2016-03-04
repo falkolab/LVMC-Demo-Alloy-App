@@ -1,0 +1,10 @@
+version: 1.0.0
+description: Multicolumn ListView helper library
+author: Andrey Tkachenko aka falkolab
+license: MIT
+copyright: Copyright © 2016 Andrey Tkachenko aka falkolab
+name: Multicolumn ListView
+moduleid: com.falkolab.lvmc
+guid: cd9a93d1-e25e-210e-464b-bf52b492b75e
+platform: commonjs
+minsdk: 3.2.0.GA

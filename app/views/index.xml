@@ -1,0 +1,7 @@
+<Alloy>
+	<Window title="ListView multicolumn">
+		<View height="Ti.UI.SIZE">
+			<Label onClick="openDemo">Open demo window</Label>		
+		</View>
+	</Window>
+</Alloy>

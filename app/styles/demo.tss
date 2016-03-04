@@ -1,0 +1,53 @@
+".nameWrapper": {
+	opacity:0.8,
+	backgroundColor: "#ffffff",
+	left: 5,
+	top: 5,
+	right: 5,
+	width: Titanium.UI.SIZE,
+	height: Titanium.UI.SIZE
+}
+
+".name": {
+	color: "#000",
+	left: 4,
+	top: 4,
+	right: 4,
+	bottom: 4,
+	font: {
+		fontSize: 11
+	},
+	width: Titanium.UI.SIZE,
+	height: Titanium.UI.SIZE
+}
+
+".avatar": {
+	width: Titanium.UI.FILL,
+	height: Titanium.UI.FILL,
+	backgroundColor: "#fff"
+}
+
+".index": {
+	right: 5,
+	bottom: 5,
+	font: {
+		fontSize: 10
+	},
+	color: "#4c4c4c",
+	backgroundColor: "#ffffff",
+	width: Titanium.UI.SIZE,
+	height: Titanium.UI.SIZE
+}
+
+".size": {
+	width: Titanium.UI.SIZE,
+	height: Titanium.UI.SIZE
+}
+
+"#activityIndicator[platform=android]": {
+	style: Titanium.UI.ActivityIndicatorStyle.BIG_DARK	
+}
+
+"#activityIndicator[platform=ios]": {
+	style: Titanium.UI.iPhone.ActivityIndicatorStyle.DARK	
+}
