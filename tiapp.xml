@@ -4,9 +4,9 @@
     <name>Multicolumnlistview</name>
     <version>1.0</version>
     <publisher>falko</publisher>
-    <url>http://</url>
-    <description/>
-    <copyright>2016 by falkolab</copyright>
+    <url>https://github.com/falkolab/LVMC-Demo-Alloy-App</url>
+    <description>Demo application for multicolumn ListView helper library </description>
+    <copyright>2016 by Andrey Tkachenko aka falkolab</copyright>
     <icon>appicon.png</icon>
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
