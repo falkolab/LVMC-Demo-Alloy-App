@@ -4,12 +4,11 @@ var page = 1,
 
 function init() {
 	$.activityIndicator.show();
-	load(function(items) {
-		var transformed = transform(items, 3);
+	load(function(items) {		
 		var lvmc = require('com.falkolab.lvmc');
-		var section = $.getView('list').sections[0];
-
-		lvmc.wrap(section).setItems(transformed);
+		var section = lvmc.wrap($.getView('list').sections[0]);
+		var transformed = transform(items, 3, section.getItems().length);
+		section.setItems(transformed);
 		$.activityIndicator.hide();
 		if ($.is) {
 			$.is.init($.getView('list'));
@@ -21,7 +20,7 @@ function init() {
 	});
 }
 
-function transform(items, columns) {
+function transform(items, columns, startIndex) {
 	var items = _.map(items, function(item, index) {
 		return {
 			avatar : {
@@ -31,7 +30,7 @@ function transform(items, columns) {
 				text : item.name
 			},
 			index : {
-				text : index
+				text : startIndex + index
 			},
 			properties : {
 				height : 150,
@@ -46,6 +45,7 @@ function transform(items, columns) {
 function load(callback, error) {
 	if (loading)
 		return;
+		
 	loading = true;
 	var client = Ti.Network.createHTTPClient({
 		onload : function(e) {
@@ -61,17 +61,18 @@ function load(callback, error) {
 		},
 		timeout : 5000
 	});
-
-	client.open("GET", url + "&page=" + page);
+	var requestUrl = url + "&page=" + page;
+	
+	client.open("GET", requestUrl);
 	client.send();
 }
 
 function onLoadMore(evt) {
 	load(function(items) {
 		var lvmc = require('com.falkolab.lvmc');
-		var section = $.getView('list').sections[0];
+		var section = lvmc.wrap($.getView('list').sections[0]);
 
-		lvmc.appendItems(section, transform(items, 3));
+		section.appendItems(transform(items, 3, section.getItems().length));
 		evt.success();
 	}, function(e) {
 		Ti.API.error(e.error);
